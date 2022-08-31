@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,67 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section
+           data-background-image="slides/res/cppcon-bloomberg-dark-title-1280x720.png"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/10-intro.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/20-overview.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/30-context.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/40-cli.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/50-workflows.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/60-migrate.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
+				<section
+            data-markdown="slides/70-end.md"
+            data-separator="^\n\n\n"
+            data-separator-vertical="^\n\n"
+            data-separator-notes="^Note:"
+          >
+        </section>
+
 			</div>
 		</div>
 
@@ -25,15 +84,33 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+    <script src="node_modules/reveal.js-menu/menu.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        // width: 1600,
+        // height: 900,
+        width: 1280,
+        height: 720,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.5,
+        maxScale: 3.0,
 				hash: true,
+        slideNumber: true,
+        hashOneBasedIndex: true,
+        center: true,
+        menu: {
+          numbers: true
+        },
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu ]
 			});
 		</script>
 	</body>
