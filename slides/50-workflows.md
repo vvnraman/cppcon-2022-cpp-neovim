@@ -2,12 +2,71 @@
 ## C++ Workflows in neovim
 
 Note:
-- Now on to the part where we get to play Donkey.
-- I'll switch over to my Terminal for the live demos, where everytime I fail
-  terribly, I earn a letter.
-- Let me also start a program which shows what keys I'm pressing, so that you
-  can follow along.
-- I'll also mention my mnemonics as to what makes sense to me.
+- Now on to the live demos where we get to play Donkey.
+- I'll switch over to my Terminal, where everytime I fail terribly, I earn
+  a letter.
+- Lets see if I can avoid making an ass of myself.
+  - So I have 5 lives basically.
+- I'll also start a program which shows what keys I'm pressing on the top right
+  corner, so that you can follow along.
+- I'll also mention my mnemonics as I use my keybindings.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### Open File, No LSP
+
+Live demo
+
+Note:
+- Move to Neovim pane
+- Zoom tmux
+- Mention `z` in Window name.
+- Open `netrw`
+- Open Telescope
+  - `<Leader>fp`
+  - `fp` = Project files
+  - Its reverse becase all my telescope mappings start from `f`
+- Type `cpp`
+- Delete `cpp`, type `main`
+- Open `app_main.cpp`
+- Zoom out a bit to show preview, then zoom back in
+- Next slide - LspInfo not working 
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### `:LspInfo` - Not attached
+
+Live demo
+
+Note:
+- No Lsp attached
+- `<Leader>fzv` - fuzzy find `clangd.lua`, show `compile_commands.json` root
+  configuration for clangd.
+- I don't want to see errors unnecessarily.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### Tree-sitter highlighting
+
+Live demo
+
+Note:
+- Enable/disable highlight
+  `:TSBufToggle highlight`
+- Different kinds of identifiers are highlighted using different colours,
+  because treesitter is doing the highlighting based on the abstract syntax
+  tree.
+- Use treesitter `vif` inside `add_number_options()` to select everthing in the
+  function.
+- Mention that it works without Lsp
+- Treesitter can do a lot more, and there are plugins which use it provide
+  additional features.
 
 <!-- next slide -->
 
@@ -18,6 +77,7 @@ Note:
 Live demo
 
 Note:
+- Switch over to the `configured` branch
 - Open Neovim
 - Open `netrw`
 - Open Telescope
@@ -33,29 +93,13 @@ Note:
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-### Tree-sitter highlighting
-
-Live demo
-
-Note:
-- Enable/disable highlight
-  `:TSBufToggle highlight`
-- Use treesitter `vif` inside `add_number_options()` to select everthing in the
-  function.
-- Treesitter can do a lot more, and there are plugins which use it provide
-  additional features.
-
-<!-- next slide -->
-
-
-<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
 ### `:LspInfo`
 
 Live demo
 
 Note:
-- Command mode
-- This wouldn't be attached if I didn't have `compile_commands.json` file.
+- Show LspInfo
+- Mention clangd attaches to the buffer
 
 <!-- next slide -->
 
@@ -69,24 +113,28 @@ Note:
 - Split
 - Horizontal split
 - `gt` and `gT`
+- Goto tab
+- In Vim, in general capital letters go in the reverse direction of their
+  lowercase counterparts.
 
 <!-- next slide -->
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-### Intellisense
+### Intellisense - Add multiply
 
 Live demo
 
 Note:
-- Implement multiply
+- Implement multiply in 2 ways
+- First without LSP using regular vim
+  - Use `:LspStop` to stop lsp
   - Copy `sub` `add_subcommand`
+- With lsp
+  - Delete the line, typing everything out manually.
   - Mention live error
-- Delete the line, typing everything out manually.
   - Show intellisence working
-- Mention `nvim-cmp`
-- Mention `lsp_signature`
-- Mention `lightspeed`
+- There are plenty of ways to do the same things in Neovim...
 
 <!-- next slide -->
 
@@ -97,6 +145,7 @@ Note:
 Live demo
 
 Note:
+- `<Leader>gf` = Go format
 - Make `app.add_subcommand("mul", "Multi...")` break at `.` and `,` and auto-format.
 - I also have a `.clang-format` file in the root of the repo.
 - `clangd` already has an integration with `clang-format` and I can format the
@@ -112,7 +161,8 @@ Live demo
 
 Note:
 - `]d` and `[d` to move between diagnostics
-- Diagnostics is a general terms which refers to errors, warnings as well as
+  - `d` for diagnostics
+- Diagnostics is a general term which refers to errors, warnings as well as
   hints.
 - One of the hints you're seeing is actually coming from `clang-tidy` because
   `clangd` already has that integrated into it.
@@ -137,8 +187,14 @@ Note:
 Live demo
 
 Note:
-- Modern alternative for quickfix/location list.
+- Modern alternative for quickfix/location list, which are really hard to
+  navigate around.
+  - Everyone uses legendary Vim plugin author Tim Pope's unimpaired plugin to
+    navigate quickfix lists.
 - We don't have to get into what those are.
+- `<Leader>xd` - `x` for error, `d` for document
+- `<Leader>xs` - `x` for error, one more `x` for in project.
+- Built-in keybindinds which make sense to me.
 - Show what trouble does based on the previous slide
 
 <!-- next slide -->
@@ -150,7 +206,9 @@ Note:
 Live demo
 
 Note:
-- TBD
+- `<Leader>ca`
+- LSP suggests code actions.
+- We're halfway through the demo.
 
 <!-- next slide -->
 
@@ -161,7 +219,9 @@ Note:
 Live demo
 
 Note:
-- TBD
+- `<Leader>gd` - Go to definition
+- `<Leader>gD` - Go to declaration
+- `<Leader>gt` - Go to type declaration
 
 <!-- next slide -->
 
@@ -172,7 +232,7 @@ Note:
 Live demo
 
 Note:
-- TBD
+- `<Leader>gs` - Go switch
 
 <!-- next slide -->
 
@@ -184,7 +244,7 @@ Live demo
 
 Note:
 - Open adder
-- `<leader>rf`
+- `<leader>rf` - references
 
 <!-- next slide -->
 
@@ -195,6 +255,7 @@ Note:
 Live demo
 
 Note:
+- `<Leader>rn` - Rename
 - Rename `m_numbers`
 - Show trouble window again
 - `:wall`

@@ -16,14 +16,14 @@ Note:
 
 Note:
 - I'm sure everyone here has already heard of Vim
-- A lot of people's first interaction with Vim is accidental, probably because
-  they ran `git commit` and felt trapped inside of
-  a black screen where the cursor isn't even blinking, and they keys don't seem
-  to work.
+- A lot of people's first interaction with Vim is accidental, you know they
+  probably ran `git commit` and immediately got trapped inside of a black
+  screen where the cursor isn't even blinking, and the keys don't seem to work.
 - This is a bit amusing to me, because from where I stand there is a very good
   reason for this...
 - And it is not Vim's fault.
-- This happens because of the mismatch between the defaults to git and vim.
+- If my git commit theory is correct this happens because of the mismatch
+  between the defaults of git and vim.
 - Let me explain...
 
 <!-- next slide -->
@@ -59,19 +59,34 @@ Note:
 - And to quit Vim, we have to go into Command mode by typing a `:` (colon) and
   then give the command `wq`, which is short for `write` this file and `quit`
   vim.
-- I'll not be covering the Vim language in this talk. What I will say is that
-  if you are learning vim on purpose, what happens after a while is that you
-    develop muscle memory to interact with the editor. And before you know it,
-    your brain is doing it passively while you focus on the code actively.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### All things vim
+
+https://github.com/mhinz/vim-galore
+
+Note:
+- I'll not be covering the Vim language in this talk.
+- This is the best resource I've found to understand Vim comprehensively.
+- What I will say is that if you are learning vim on purpose, what happens
+  after a while is that you develop muscle memory to interact with the editor.
+  And before you know it, your brain is doing it passively while you focus on
+  the code actively.
 - So apart from getting out of the way visually, it also does that for your
   attention span.
 - There is a reason Vim keybindings are available as a feature in almost every
   other editor I'm aware of, including all the Web Browsers via plugins.
 - So if Vim is so good, then why is this talk about Neovim?
 - Well I personally don't see Neovim as a completely different thing from Vim,
-  like Notepad++ was for me. Neovim is a spiritual flavour of Vim, you know
-  like Scheme, Common Lisp, Racket and Clojure are considered flavours of LISP.
-- But for the technical reasons we revisit the history a bit
+  like Notepad++ was for me.
+- And I'm not being diplomatic here. When you see me talk about a lot of the
+  features of Neovim, I organically use statements like "this is a built-in vim
+  keybinding" or a "standard vim feature", even though I'm using Neovim. And
+  that is because of the Vim lineage.
+- But for the technical reasons we'll have to revisit the history a bit
 
 <!-- next slide -->
 
@@ -162,7 +177,7 @@ immediately.
   LSP client written in `Lua` 💡
 - <!-- .element: class="fragment" -->
   `Lua` plugins
-  - First class citizens ✈️
+  - Feel native ✈️
   - LSP aware 🛸
 
 [tree-sitter]: https://tree-sitter.github.io/
@@ -171,7 +186,7 @@ Note:
 - A key decision Thiago made with Neovim was to use `lua` as the scripting
   language, even though `Vimscript` would still work.
 - This turned out to play a huge role as plugins written in `lua` feel like
-  first class citizens in my opinion.
+  they are a core part of Neovim.
   - They have access to all the same neovim core apis as the native Neovim
     UIs...
   - ... and they can access the language server to provide a richer feature

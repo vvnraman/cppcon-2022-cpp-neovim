@@ -10,5 +10,7 @@ Note:
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-chapter-intro-1280x720.png" -->
 ### Questions ?
 
+https://github.com/vvnraman/dotfiles
+
 www.TechAtBloomberg.com/cplusplus
 

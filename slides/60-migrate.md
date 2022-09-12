@@ -103,8 +103,8 @@ end, { buffer = bufnr })
 - Lua automatically creates closure as local variable used within function
 
 Note:
-- So I had zero prior experience with lua but I was able to get up to speed
-  with everything over a weekend.
+- I'm plesantly surprised with how simple it was for me to pick up lua, without
+  any experience with it prior to using Neovim.
 - Its a very small and simple language with a wide acceptance already as an
   embeddable language. Its used in `redis` for scripting.
 - Here is the keybinding I created to show all the symbols in the current file
@@ -118,25 +118,25 @@ Note:
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-### Lua resources
+### Neovim Lua resources
 
 - - TJDevries & Bashbunni [Telescope and Neovim intro][tj-bash-telescope]
-  - ![tj-bash-telescope](slides/res/tj-bash-telescope-brave_20220906_191134_yqn0GNKbc6.png) <!-- .element height="30%" width="30%" -->
+  - ![tj-bash-telescope](slides/res/tj-bash-telescope-brave_20220906_191134_yqn0GNKbc6.png) <!-- .element height="25%" width="25%" -->
 
 - - TJDevries & Bashbunni [Neovim Lua Plugin From Scratch][tj-bash-lua-plugin]
-  - ![tj-bash-lua-plugin](slides/res/tj-bash-lua-plugin-brave_20220906_191305_p2HsOJaDPH.png) <!-- .element height="30%" width="30%" -->
+  - ![tj-bash-lua-plugin](slides/res/tj-bash-lua-plugin-brave_20220906_191305_p2HsOJaDPH.png) <!-- .element height="25%" width="25%" -->
 
-[tj-bash-telescope]: https://www.youtube.com/watch?v=guxLXcG1kzQ&t=7191s
+[tj-bash-telescope]: https://www.youtube.com/watch?v=guxLXcG1kzQ
 [tj-bash-lua-plugin]: https://www.youtube.com/watch?v=n4Lp4cV8YR0
 
 Note:
 - I learnt a lot about Neovim and Lua from TJ Devries YouTube channel,
-  specially the long form ones where he is teaching his friend bashbunni about
-  Neovim.
-- He is Neovim core developer, wrote the initial LSP client as well as the
-  telescope plugin.
-- She is new to Neovim so she asks the kind of questions I would have had if
-  I was getting started and thats what made those videos so useful.
+  specially the long form videos where he is teaching his friend bashbunni
+  about Neovim.
+- He is one of core developers of Neovim and he wrote the initial LSP client as
+  well as the telescope plugin.
+- And she is new to Neovim so she asks the kind of questions I would have had
+  if I was getting started and thats what made those videos so useful.
 
 <!-- next slide -->
 
@@ -154,7 +154,11 @@ Note:
 [fennel]: https://fennel-lang.org/
 
 Note:
-- Rejoice ! if you like to configure your editor using a lisp
+- One interesting thing I discovered while learning lua was that there is
+  flavour of lisp called "Fennel" which transpiles to lua.
+- So if you're on of those people who like to configure your editor using
+  a lisp, then Neovim is for you !
+
 <!-- next slide -->
 
 # Pause before end

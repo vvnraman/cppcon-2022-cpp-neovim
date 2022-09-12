@@ -33,7 +33,7 @@ Note:
   rich editing experience I'll be covering today is the Language Server
   Protocol
 - A language server is a language specific server which understands your
-  project on at a syntactic and semantic level.
+  project at an abstract syntax tree and semantic level.
   - Its analogous to a build system, and we'll see later how the C++ build
     system helps us setup the language for us, which is the de facto C++
     language server.
@@ -42,6 +42,7 @@ Note:
 
   - "where is this function defined" or
   - "where is this type declared"
+  - "I've typed these letters so far, do you have any symbols in the current context which match what I have typed"
 
   and use that information to provide intellisence.
 - Neovim has a built in LSP client which enables it to have intellisence like
@@ -63,17 +64,17 @@ Note:
 - Peek behind the curtain
 
 Note:
-- By the end of this talk I hope to have shown what a modern command line based
-  development environment could look like, as an alternative to a GUI based
-  IDE.
-- I hope to show
-  - Neovim's TUIs, which stands for Terminal User Interface
+- I hope by the end of this talk, the command line feels a bit more friendlier
+  than before.
+- Whether or not you consider as an alternative to GUI based IDEs comes down to
+  preferences.
+- I also hope to show
+  - Neovim's fancy Terminal User Interfaces
   - Its built in LSP integration
-  - as well as its rich plugin ecosystem, a lot of which are LSP aware and leverage the
-    language server for their functionality.
-- Along the way you will also see a few things under the hood of the editor,
-  i.e. the compiler and the rest of the tooling which are usually hidden when
-  you're using an IDE.
+  - as well as its rich plugin ecosystem, a lot of which are LSP aware and
+    leverage the language server for their functionality.
+- Along the way we'll also peek at a few things under the hood of the editor,
+  which are typically hidden away from us when using an IDE.
 
 <!-- next slide -->
 

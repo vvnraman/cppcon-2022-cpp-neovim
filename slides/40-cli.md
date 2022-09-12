@@ -14,49 +14,101 @@ Note:
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-![tmux project](slides/res/cli-tmux-project_20220904_205215_ZyYpuEDIjd.png)
+![tmux project](slides/res/cli-tmux-project-tundra-1920x1080.png)
 
 Note:
-- This is a typical view for me when I'm working on a project using Neovim.
-- What you're seeing here is a single tmux window inside of a tmux session.
-- And I'll get to what `tmux` is in just a bit.
-- The single tmux window with has 2 panes.
-  - The top tmux pane is running Neovim
-  - The bottom tmux pane is just the bash shell.
-- Everything is running within Windows Terminal. You'd probably use GNome
-  terminal on native Ubuntu or the Mac Terminal on a Mac.
-- So `tmux` is a terminal multiplexer.
-  - i.e. Rather than me having multiple Window Terminal tabs and panes, and
-    runing bash within those, I let `tmux` handle that for me.
-- Neovim also has its own representation of Windows and Tabs.
-  - The top tmux pane running Neovim is basically a single Neovim window within
-    a single Neovim tab.
-  - You can have more than 1 Neovim window within a tab, and you can have
-    multiple Neovim tabs.
-- I'm only mentioning these things so that you can better visualize the demos
-  when I get to them.
-- In the next slide, you can see the keys I pressed in the top right corner
-  in dark blue background
+### CLI tmux 1
+
+- This is a typical screen which I spend most of my time looking at when I'm
+  working on a project.
+- So you can imagine that I would want it to look a bit aesthetically pleasing.
+- **Pause**
+- **Breathe**
+- **Look at screen**
+- I'm glad to have discovered that my wife likes this as well.
+- I recently gifted her a fancy colourful mechanical keyboard to see if I can
+  nudge her in this direction.
+  - You know just a random gift, not on any special occasions.
+- We'll see.
+- Okay, let us break down what we're looking at.
+- This is Windows Terminal running a tmux session inside Ubuntu. I'll get to what
+  `tmux` is in just a bit.
+- You'd probably use the GNome terminal on native Ubuntu or Alacritty or
+  Wezterm or your terminal of choice.
+- And what you're seeing here is a single tmux window with 2 panes, all running
+  inside of a tmux session.
 
 <!-- next slide -->
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-![tmux project](slides/res/tmux-window-pane-neovim-Carnac_20220905_081509_VNRCxtt0c4.gif)
+
+![tmux project](slides/res/cli-tmux-project-neovim-focus-tundra-1920x1080.png)
+
+Note:
+### CLI tmux 2
+
+- The top tmux pane is running Neovim
+- When I'm working on code, I'm zoomed in to this pane. You can see that
+  there is the majority of that pane is just code and there is a single line at
+  the bottom with some information about that code.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+![tmux project](slides/res/cli-tmux-project-bash-focus-tundra-1920x1080.png)
+
+Note:
+### CLI tmux 3
+
+- The bottom tmux pane is just the bash shell.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### tmux - Sessions, Windows, Panes
+
+![tmux project](slides/res/cli-tmux-project-bash-only-tmux-focus-tundra-1920x1080.png)
+
+Note:
+### CLI tmux 4
+
+- So `tmux` is a terminal multiplexer.
+- i.e. Rather than me running multiple instances of Window Terminal and then
+  having a shell within those, it manages that for me.
+- I'm typically always zoomed in into the Neovim tmux pane, or any other pane
+  if I'm spending any significant amount of time in it.
+- In the next 2 slides, I'll show a gif of this workflow in action, and you can
+  see the keys I'm pressing to do everything in the top right corner.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+![tmux project](slides/res/cli-tmux-window-pane-navigate.gif)
 
 Note:
 - I am opening another `tmux` window within the same `tmux` session.
-- I split it vertically, run Neovim in the left pane and paste a "Hello CppCon"
-  program.
-- I switch to the right pane and run `g++` to compile it and the run it.
-- So `tmux` lets me to stay within the command line environment while still
-  letting me work on different things via a keyboard driven workflow.
+- And then I split it vertically into 2 panes to have 2 shells.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+![tmux project](slides/res/cli-tmux-pane-switch-neovim-gcc.gif)
+
+Note:
+- I switch to the left pane, open Neovim, copy paste a hello world program and save it.
+- Then I switch to the right pane and run `g++` to compile it and the run it.
+- So `tmux` lets me stay within the command line environment and allows me to
+  multi-task via a keyboard driven workflow.
 - Both Vim and Neovim have a Terminal mode which allows you do stay completely
   within Neovim. I haven't found a reason to use it yet as I already have
-  a fluent `tmux` workflow already. But if you're not used to `tmux` that that
-  Terminal mode in Neovim should come in very handy.
-- I'm typically always zoomed in into the Neovim tmux pane, what you're seeing
-  here is just for demonstration.
+  a fluent `tmux` workflow. But if you're not used to `tmux` then that Terminal
+  mode in Neovim should come in very handy.
+- Okay, lets talk about the C++ project.
 
 <!-- next slide -->
 
@@ -82,6 +134,7 @@ Toy calculator
 Note:
 - I have a very simple toy C++ project which just does addition and subtraction
   on the command line.
+- A few things of note...
 
 <!-- next slide -->
 
@@ -105,9 +158,9 @@ Note:
 [invoke]: https://docs.pyinvoke.org/en/stable/index.html
 
 Note:
-- It uses CMake to generate the build files for ninja
+- It uses CMake to generate the build system, which in our case is ninja
 - I have gcc-11 installed on the system
-- and I'm using `vcpkg` to fetch the dependencies
+- and I'm using `vcpkg` to provide the dependencies of the project.
 - I'm using a tool called `invoke` to drive the development workflow and that
   is where the `tasks.py` file comes in.
   - A lot of times you may have see a `Makefile` or a shell script in a project
@@ -167,6 +220,8 @@ cmake \
 </div>
 
 Note:
+- So the first thing you have to do with CMake is to configure the project,
+  which generates the build system for us.
 - I used `invoke` to run the cmake configure step.
 - Roughly speaking
   - It creates an out of source build directory and `cd`s into it
@@ -195,15 +250,10 @@ Note:
   `compile_commands.json` 📄
 
 Note:
-- I used `invoke` to run the cmake configure step.
-- Roughly speaking
-  - It creates an out of source build directory and `cd`s into it
-  - Then it runs cmake configure providing it a path to the vcpkg toolchain
-    file
-- Below you can see what we get in the build directory.
+- This generates the following build folder.
 - The `vcpkg_installed` folder is where all the dependencies I've specified in
   `vcpkg.json` get installed.
-- We also have this file called `compile_commands.json`
+- We also have this file called `compile_commands.json`, whats that.
 
 <!-- next slide -->
 
@@ -231,9 +281,9 @@ Build directory
 Note:
 - That is a json compilation database produced by CMake if you do either of
   things as shown at the top here.
-- Its a de-facto standard for passing information from the compiler to any tool
-  which wants to consume it.
-- I'm not getting into the details of whats in there, butI'll be happy to
+- Its a de-facto standard for providing information from the compiler around
+  how each file in the project was compiled.
+- I'm not getting into the details of whats in there, but I'll be happy to
   discuss that if we get time at the end.
 
 <!-- next slide -->
@@ -250,13 +300,15 @@ Source directory
 └── ...more...
 ```
 
+`$ invoke config` <!-- .element: class="fragment" -->
+
 Note:
-- All we need to make the Neovim lsp client connect to `clangd`, the C++
-  language server, is to have a complation database present in the root of
-  my project.
-- So all I did here was run `invoke config`, and it did a CMake configure for
-  me, and then it created a symlink to the `compile_commands.json` in the build
-  directory.
+- So all we need to make the Neovim lsp client connect to `clangd` C++ language
+  server, is to have that complation database present in the root of our
+  project.
+- I do that by having my `invoke config` command create such a symlink.
+- And all I did here was run `invoke config`, and it did a CMake configure,
+  then it created this symlink, and that made Neovim connect to clangd.
 
 <!-- next slide -->
 
@@ -320,9 +372,9 @@ Note:
 - This is mostly a reference slide
 - I wanted to highlight a couple of indispensable plugins. I'll bring them up
   again as I use them in the next section.
-- `mason` is the plugin which installs the language servers on behalf of Neovim
-  - So we don't necessarily have to use it if we're installing language servers
-    on our own.
+- `mason` is the plugin which installs the language servers on behalf of Neovim.
+  - If it wasn't clear, `clangd` is running locally on the system, same as
+    Neovim.
 - The primary reason for using Neovim is that you can use the Vim language to
   interact with the editor. Everything I'll be covering in the workflows
   section is just to show that you don't lose access to any IDE like features.
@@ -340,14 +392,19 @@ https://xkcd.com/191/
 `<Leader>` - `<Space>`
 
 Note:
+- **Pause**
+- **Breathe**
 - One last thing, before I switch to demos.
 - One of the things you learn to do with Vim and Neovim is to come up with your
-  own mnemonics to remember keybindinds for the most common workflows.
-- Vim has a concept of a `<Leader>` key which you can set to any key and it
-  acts as a namespace for your own key-bindinds so that it doesn't interfere
-  with any built-in keybindinds.
-  - For me that is `<Space>` and I mention that because you'll be seeting that
-    a lot.
+  keybindings for the most common workflows, such that they are based on some
+  mnemonics you can remember.
+- You can come up with whatever keybinding you want, as long as you remember
+  it.
+- Vim has a concept of a `<Leader>` key which you can think of as a namespace
+  for your own keybindings, so that they don't conflict with built-in vim
+    keybinding.
+- For me that is `<Space>` and I mention that because you'll be hearning me say
+  `<Leader>` a lot during the demos, when I'm typing `<Space>`.
 - All the keys I press will show up on the top right corner.
 
 <!-- next slide -->

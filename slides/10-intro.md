@@ -59,10 +59,10 @@ Note:
 
 - This is more of an observation I had while preparing the slides for this
   talk...
-- As I feel I have gravitated towards the current command line setup with
+- As I feel I have gravitated towards the current command line setup around
   Neovim for similar reasons
   - Both the tangible ones like speed, minimalism and efficiency and this
-    intangible thing where it gets of the way.
+    intangible thing where it gets out of way.
 
 ## Pause
 
