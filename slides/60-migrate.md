@@ -6,6 +6,10 @@
 
 Note:
 - Lets talk about how you may get started with Neovim
+- First we'll cover what one might do if they're coming to Neovim from any
+  other editor apart from Vim.
+- Then we'll talk about how an existing vim user would give Neovim a try.
+- And finally we'll talk a bit about `lua`
 
 <!-- next slide -->
 
@@ -17,35 +21,66 @@ Under `$HOME` on Linux, `%USERPROFILE` on Windows
 ```console
 📂 .config
 └──📂 nvim
-   ├── 📄 init.lua ⬅️ 
-   └── 📂 lua
-       └── 📄 weekend.lua
+   └── 📄 init.lua ⬅️ 
 ```
 
-- Write from scratch
-  - `require("weekend")` in `init.lua`
 - [kickstart.nvim][kickstart]
 - [lsp-zero][lsp-zero]
-- [LunarVim][lunarvim]
-- [NvChad][nvchad]
 
 [kickstart]: https://github.com/nvim-lua/kickstart.nvim
 [lsp-zero]: https://github.com/VonHeikemen/lsp-zero.nvim
-[lunarvim]: https://github.com/LunarVim/LunarVim
-[nvchad]: https://github.com/NvChad/NvChad
 
 Note:
 - When you launch Neovim, it reads this config file present at
   `.config/nvim/init.lua` inside of your `$HOME` folder.
 - I'll highly recommend the `kickstart.nvim` project to get started with
-  a minimal config.
-- But if you were to do this from scratch, maybe allocate a weekend before you
-  proceed.
-  - Btw that `require("weekend")` will include the `weekend.lua` file in
-    `init.lua`
-- There is also this more feature rich `lsp-zero` project which includes a few
-  extra things.
-- And if you don't want to spend any time configuring anything, then I'll
+  a minimal config, and then build upon it over time.
+- There is also this `LspZero` project, which is a bit more feature rich then
+  `kickstart.nvim`.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### Neovim config from scratch
+
+Under `$HOME` on Linux, `%USERPROFILE` on Windows
+```console
+📂 .config
+└──📂 nvim
+   ├── 📄 init.lua ⬅️ 
+   └── 📂 lua
+       └── 📄 weekend.lua
+```
+
+- `init.lua` contents
+
+  ```lua
+  require("weekend")
+  ```
+
+Note:
+- But if you were to do this from scratch, this is the structure I'd recommend
+  so that you can do it in a modular fashion.
+- That `require("weekend")` line will include the `weekend.lua` file in that lua
+  folder as a module in your `init.lua`.
+- This is the standard way you includes modules in lua
+- If it wasn't clear, I'd recommend setting a weekend aside before you proceed
+  with this option.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### Neovim distributions
+- [LunarVim][lunarvim]
+- [NvChad][nvchad]
+
+[lunarvim]: https://github.com/LunarVim/LunarVim
+[nvchad]: https://github.com/NvChad/NvChad
+
+Note:
+- If you don't want to spend any time configuring anything, then I'll
   suggest these Neovim distributions
 
   - either LunarVim
@@ -54,13 +89,17 @@ Note:
   which include the kitchen sink and come with their own set of configurations
   and keybindings.
 
+So this is what you would do if you were coming to Neovim from any other
+editor.
+
+But if you're already using Vim, and want to try out Neovim...
+
 <!-- next slide -->
 
 
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
 ### Vim ➡️ Neovim
 
-- Use Vim for years
 - Use Neovim with your [existing `.vimrc`][nvim-from-vim]
 
   `$HOME/.config/nvim/init.vim`
@@ -78,7 +117,7 @@ Note:
 
 Note:
 - If you're already using Vim and would like to try out Neovim, you can get
-  started with just these 3 lines
+  started with just these 3 lines here.
 - Neovim will load your existing vimrc and existing plugins.
 - After a while if you do decide to stay, you can switch over to the lua based
   config.
@@ -98,9 +137,14 @@ vim.keymap.set({ "n" }, "<leader>lds", function()
 end, { buffer = bufnr })
 ```
 
-- Declare local variable
-- Set function to be called when key pressed
-- Lua automatically creates closure as local variable used within function
+- <!-- .element: class="fragment" -->
+  Declare local variable
+
+- <!-- .element: class="fragment" -->
+  Set function to be called when key pressed
+
+- <!-- .element: class="fragment" -->
+  Lua automatically creates closure with local variable
 
 Note:
 - I'm plesantly surprised with how simple it was for me to pick up lua, without
@@ -109,10 +153,14 @@ Note:
   embeddable language. Its used in `redis` for scripting.
 - Here is the keybinding I created to show all the symbols in the current file
   via telescope, as I showed earlier.
-  - **Note in slide**
-  - This is very understanable.
+- So whats happening here is
+  - I'm declaring a local variable
+  - I'm setting a function to be called when those keys are pressed.
+  - And `lua` creates a closure around that local variable for us.
+- This is very understanable.
 - And I never considered writing my own plugin in Vimscript when I was using
-  Vim, but I do see myself doing something with `lua` to extend Neovim.
+  Vim, but I do see myself doing more and more with `lua` to personalize
+  Neovim.
 
 <!-- next slide -->
 

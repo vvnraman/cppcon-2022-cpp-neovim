@@ -11,14 +11,14 @@ Note:
 - This is what we'll be covering today.
 - After a brief mention of some housekeeping items...
 - I'll setup the context around why this is a talk on Neovim as opposed to Vim.
-- Then I'll introduce the command line setup I typically use for C++ using
+- Then I'll talk about the command line setup I typically use for C++ using
   a toy project.
-- Then we'll spend a lot of time on C++ Workflows with Neovim in that toy
-  project.
+- Then we'll spend a lot of time on C++ Workflows with Neovim via some live demos.
 - Finally we'll see how one could get started with setting up Neovim to have
   a similar workflow
-- I'll pause at a few places during the talk for questions, so please take
-  a note of the slide numbers if you want to ask something.
+- I'd prefer to take questions at the end of the talk.
+- So please take a note of the slide numbers on the bottom right corner if you
+  want to ask something at the end.
 
 <!-- next slide -->
 
@@ -66,7 +66,7 @@ Note:
 Note:
 - I hope by the end of this talk, the command line feels a bit more friendlier
   than before.
-- Whether or not you consider as an alternative to GUI based IDEs comes down to
+- Whether you consider it as an alternative to GUI based IDEs comes down to
   preferences.
 - I also hope to show
   - Neovim's fancy Terminal User Interfaces
@@ -74,7 +74,7 @@ Note:
   - as well as its rich plugin ecosystem, a lot of which are LSP aware and
     leverage the language server for their functionality.
 - Along the way we'll also peek at a few things under the hood of the editor,
-  which are typically hidden away from us when using an IDE.
+  which are typically hidden away from us when we're using an IDE.
 
 <!-- next slide -->
 
@@ -96,12 +96,12 @@ Note:
     - MacOS
 
 Note:
+- I am going to assume some C++ knowledge, and some CMake knowledge, as this
+  talk is primarily about how the many different tools invovled in C++ conding
+  work together, as opposed to focusing on any one tool.
 - I'm using Ubuntu 20.04 running within WSL2 on Windows for this talk.
 - Everything I'm showing here should work on any flavour of linux as well as
-  MacOS.
-- I am going to assume some C++ knowledge, and some CMake knowledge, as this is
-  a talk primarily about how the many different tools invovled in C++ work
-  together.
+  Mac.
 
 <!-- next slide -->
 
@@ -114,4 +114,7 @@ Note:
 - Command Line Environment
 - C++ Workflows with Neovim
 - Neovim Setup
+
+Note:
+- Let us setup the context around why this talk is on Neovim.
 

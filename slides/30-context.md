@@ -6,7 +6,9 @@
 - Neovim today
 
 Note:
-- Let us setup the context around why this talk is on Neovim.
+- We'll talk a bit about Vim
+- How Neovim came about
+- And what the status quo with Neovim is today.
 
 <!-- next slide -->
 
@@ -19,8 +21,9 @@ Note:
 - A lot of people's first interaction with Vim is accidental, you know they
   probably ran `git commit` and immediately got trapped inside of a black
   screen where the cursor isn't even blinking, and the keys don't seem to work.
+- This question on stackoverflow has 2.7 million views.
 - This is a bit amusing to me, because from where I stand there is a very good
-  reason for this...
+  reason for why that happens.
 - And it is not Vim's fault.
 - If my git commit theory is correct this happens because of the mismatch
   between the defaults of git and vim.
@@ -81,11 +84,12 @@ Note:
   other editor I'm aware of, including all the Web Browsers via plugins.
 - So if Vim is so good, then why is this talk about Neovim?
 - Well I personally don't see Neovim as a completely different thing from Vim,
-  like Notepad++ was for me.
-- And I'm not being diplomatic here. When you see me talk about a lot of the
-  features of Neovim, I organically use statements like "this is a built-in vim
-  keybinding" or a "standard vim feature", even though I'm using Neovim. And
-  that is because of the Vim lineage.
+  like Notepad++ is.
+- And I'm not being diplomatic here. Because when you see me talk about the
+  features of Neovim in the coming slides, I'll organically use statements like
+  "this is a built-in vim keybinding" or a "this is standard vim feature", even
+  though I'm using Neovim. And that is because of the Vim lineage which Neovim
+  inherits, similar to the Vi lineage, Vim inherited.
 - But for the technical reasons we'll have to revisit the history a bit
 
 <!-- next slide -->
@@ -110,8 +114,10 @@ Note:
 Note:
 - Well, in 2013 I was using Vim with Syntastic plugin to see errors in C++ code
   inline in the editor
-- And the way it worked was, everytime I saved the file, the editor would
-  freeze while the compiler ran in the background, waiting for it to finish.
+- And the way it worked was, everytime I saved the file, it would run the compiler on that file, parse the output for any errors, and show me the errors inline.
+- While the compiler ran, vim would freeze waiting for it to finish.
+- And thats because Vim wasn't concurrent back then. i.e. There was no concept
+  of a background job.
 - As you can imagine, this was a very disruptive workflow.
 - Needless to say, I was always keeping an eye out for solutions.
 
@@ -144,6 +150,7 @@ Note:
     with async support
 - Its essentially a Vim fork designed with modularity and extensibility in mind
 - There is Neovim Core with a `msgpack` based protocol for UIs to interact with it.
+- The first stable version was released in November 2015.
 
 Even though Vim eventually added support for async jobs next year, for some
 reason...
@@ -170,27 +177,29 @@ immediately.
   - `luajit` is fast 🚀
   - `vimscript` still supported
 - <!-- .element: class="fragment" -->
-  [Tree-sitter] support 🌲
-  - syntax highlights
-  - semantic textobjects
-- <!-- .element: class="fragment" -->
   LSP client written in `Lua` 💡
 - <!-- .element: class="fragment" -->
   `Lua` plugins
   - Feel native ✈️
   - LSP aware 🛸
+- <!-- .element: class="fragment" -->
+  [Tree-sitter] support 🌲
+  - syntax highlights
+  - semantic textobjects
 
 [tree-sitter]: https://tree-sitter.github.io/
 
 Note:
 - A key decision Thiago made with Neovim was to use `lua` as the scripting
   language, even though `Vimscript` would still work.
+- The LSP client in Neovim is written in lua.
 - This turned out to play a huge role as plugins written in `lua` feel like
   they are a core part of Neovim.
   - They have access to all the same neovim core apis as the native Neovim
     UIs...
-  - ... and they can access the language server to provide a richer feature
-    set.
+  - ... and they can access the language server to provide enhanced features.
+- Neovim also has treesitter support, which is a library for incrementally
+  parsing a file, and I'll show why that is useful during the demos.
 
 <!-- next slide -->
 
@@ -204,8 +213,10 @@ Stack Overflow [Developer Survey 2022][so-dev-survey-2022]
 
 Note:
 - Its no wonder that Neovim came out as the most loved IDE in this year's Stack
-  overflow developer survey, which was the 2nd consecutive year for this
+  overflow developer survey, which was the 2nd consecutive year for that
   position.
+- So this talk is about Neovim, because that is what I use, but I'm not the
+  only one exited by it.
 
 <!-- next slide -->
 
@@ -219,3 +230,8 @@ Note:
 - C++ Workflows with Neovim
 - Neovim Setup
 
+Note:
+- I'm not taking any questions here as so far what I've covered is mostly
+  subjective.
+- But I'd be happy to discuss anything covered so far in the hallway track.
+- So lets talk about the command line environment next.

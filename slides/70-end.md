@@ -2,7 +2,8 @@
 # Thank you 🎉
 
 Note:
-- That is the end of my talk
+- That's the end of my talk
+- Thank you for coming.
 
 <!-- next slide -->
 

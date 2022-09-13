@@ -10,8 +10,19 @@ Note:
 - I work at Bloomberg
 - Everything in this talk is based on the C++ setup I have at home, a close
   approximation of which I use at work as well
-- I'm a regular C++ application developer. I just happen to be enthusiastic
-  about my dev setup...
+- I'm a regular C++ application developer, who just happens to be enthusiastic
+  about his dev setup.
+- Before we start...
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" data-visibility="hidden" -->
+![Talk Setup](slides/res/cppcon-talk-setup-1280x720.jpg)
+
+Note:
+.. **dev setup**
+- Sometimes overly enthusiastic as well !
 - Before we start...
 
 <!-- next slide -->
@@ -66,6 +77,6 @@ Note:
 
 ## Pause
 
-With that, lets get started...
+With that, lets get started with the actual talk.
 
 <!-- next slide -->

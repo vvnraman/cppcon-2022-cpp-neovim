@@ -6,7 +6,6 @@
 - Neovim
 
 Note:
-- Lets talk about the setup for C++ coding on the command line
 - I'm may cover some of the parts here only briefly as its mostly for building
   familiarity with the tools I'll be working with in addition to Neovim.
 
@@ -25,7 +24,8 @@ Note:
 - **Pause**
 - **Breathe**
 - **Look at screen**
-- I'm glad to have discovered that my wife likes this as well.
+- I'm glad to have found that my wife likes this as well.
+- **Pause**
 - I recently gifted her a fancy colourful mechanical keyboard to see if I can
   nudge her in this direction.
   - You know just a random gift, not on any special occasions.
@@ -49,9 +49,15 @@ Note:
 ### CLI tmux 2
 
 - The top tmux pane is running Neovim
-- When I'm working on code, I'm zoomed in to this pane. You can see that
-  there is the majority of that pane is just code and there is a single line at
-  the bottom with some information about that code.
+- When I'm working on code, I'm zoomed in to this pane so that I don't see any
+  other panes.
+- You can see that the majority of that pane is just code and there is
+  a single line at the bottom with some information about that code.
+  - I'm in normal mode
+  - I'm on the main branch
+  - The file name is `app_main.cpp`
+  - Its a UTF-8 encoded c++ file
+  - The cursor is on line 30, column 18
 
 <!-- next slide -->
 
@@ -116,8 +122,6 @@ Note:
 <!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
 ### C++ Project
 
-Toy calculator
-
 ```
 📂 .
 ├── 📄 CMakeLists.txt
@@ -131,9 +135,45 @@ Toy calculator
 - Add 2 numbers
 - Subtract 2 numbers
 
+https://github.com/vvnraman/cppcon-2022-cpp-neovim-toy-calc
+
 Note:
 - I have a very simple toy C++ project which just does addition and subtraction
   on the command line.
+
+<!-- next slide -->
+
+
+<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
+### Toy calculator
+
+```console
+ ./usr/local/bin/calc --help
+A toy calculator program to demo Neovim on the command line
+Usage: calc [OPTIONS] SUBCOMMAND
+
+Options:
+  -h,--help                   Print this help message and exit
+
+Subcommands:
+  add                         Add 2 numbers
+  sub                         Subtract numbers
+```
+
+Add
+```console
+./usr/local/bin/calc add 10 5
+10 + 5 = 15
+```
+
+Subtract
+```console
+./usr/local/bin/calc sub 10 5
+10 - 5 = 5
+```
+
+Note:
+- This is what you see when you run the toy program
 - A few things of note...
 
 <!-- next slide -->
@@ -306,43 +346,9 @@ Note:
 - So all we need to make the Neovim lsp client connect to `clangd` C++ language
   server, is to have that complation database present in the root of our
   project.
-- I do that by having my `invoke config` command create such a symlink.
 - And all I did here was run `invoke config`, and it did a CMake configure,
-  then it created this symlink, and that made Neovim connect to clangd.
-
-<!-- next slide -->
-
-
-<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" -->
-### Toy calculator
-
-```console
- ./usr/local/bin/calc --help
-A toy calculator program to demo Neovim on the command line
-Usage: calc [OPTIONS] SUBCOMMAND
-
-Options:
-  -h,--help                   Print this help message and exit
-
-Subcommands:
-  add                         Add 2 numbers
-  sub                         Subtract numbers
-```
-
-Add
-```console
-./usr/local/bin/calc add 10 5
-10 + 5 = 15
-```
-
-Subtract
-```console
-./usr/local/bin/calc sub 10 5
-10 - 5 = 5
-```
-
-Note:
-- This is what you see when you run the toy program
+  then it created this symlink in the source directory, and that made Neovim
+  connect to clangd.
 
 <!-- next slide -->
 
@@ -375,9 +381,6 @@ Note:
 - `mason` is the plugin which installs the language servers on behalf of Neovim.
   - If it wasn't clear, `clangd` is running locally on the system, same as
     Neovim.
-- The primary reason for using Neovim is that you can use the Vim language to
-  interact with the editor. Everything I'll be covering in the workflows
-  section is just to show that you don't lose access to any IDE like features.
 
 <!-- next slide -->
 
@@ -396,16 +399,17 @@ Note:
 - **Breathe**
 - One last thing, before I switch to demos.
 - One of the things you learn to do with Vim and Neovim is to come up with your
-  keybindings for the most common workflows, such that they are based on some
-  mnemonics you can remember.
+  keybindings for the most common workflows, and you do that by having
+  mnemonics you can remember for those keybindings.
 - You can come up with whatever keybinding you want, as long as you remember
   it.
+- I look forward learning other people's mnemonics to see if they have a better
+  one.
 - Vim has a concept of a `<Leader>` key which you can think of as a namespace
   for your own keybindings, so that they don't conflict with built-in vim
     keybinding.
 - For me that is `<Space>` and I mention that because you'll be hearning me say
-  `<Leader>` a lot during the demos, when I'm typing `<Space>`.
-- All the keys I press will show up on the top right corner.
+  `<Leader>` a lot during the demos, when I say what my mnemonics are.
 
 <!-- next slide -->
 
@@ -420,4 +424,7 @@ Note:
 - Neovim Setup
 
 Note:
-# Pause for questions
+- Lets me take a look at the time to see if we can take a quick pause for questions.
+- I should have 30-35 mins left right now.
+
+### Pause for questions
