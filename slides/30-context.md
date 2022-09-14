@@ -145,15 +145,16 @@ Note:
 
 Note:
 - Neovim was announced by Thiago in 2014 after his efforts to add async support
-  to Vim got stalled.
+  to Vim didn't get any results.
   - You can still visit that link to see his original fork of Vim from 2014
     with async support
 - Its essentially a Vim fork designed with modularity and extensibility in mind
 - There is Neovim Core with a `msgpack` based protocol for UIs to interact with it.
-- The first stable version was released in November 2015.
+- The first stable version of Neovim was released in November 2015.
 
-Even though Vim eventually added support for async jobs next year, for some
-reason...
+Vim eventually added support for async jobs next year.
+
+But for some reason...
 
 <!-- next slide -->
 
@@ -190,8 +191,9 @@ immediately.
 [tree-sitter]: https://tree-sitter.github.io/
 
 Note:
-- A key decision Thiago made with Neovim was to use `lua` as the scripting
-  language, even though `Vimscript` would still work.
+- Neovim has come a long way since then, because...
+- One of the key decision Thiago made with Neovim was to use `lua` as the
+  scripting language, even though `Vimscript` would still work.
 - The LSP client in Neovim is written in lua.
 - This turned out to play a huge role as plugins written in `lua` feel like
   they are a core part of Neovim.

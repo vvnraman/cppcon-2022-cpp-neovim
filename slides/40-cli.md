@@ -22,21 +22,18 @@ Note:
   working on a project.
 - So you can imagine that I would want it to look a bit aesthetically pleasing.
 - **Pause**
-- **Breathe**
-- **Look at screen**
 - I'm glad to have found that my wife likes this as well.
 - **Pause**
 - I recently gifted her a fancy colourful mechanical keyboard to see if I can
   nudge her in this direction.
-  - You know just a random gift, not on any special occasions.
-- We'll see.
+  - Not on any special occasion, just a random surprise.
+- So we'll see.
 - Okay, let us break down what we're looking at.
 - This is Windows Terminal running a tmux session inside Ubuntu. I'll get to what
   `tmux` is in just a bit.
 - You'd probably use the GNome terminal on native Ubuntu or Alacritty or
   Wezterm or your terminal of choice.
-- And what you're seeing here is a single tmux window with 2 panes, all running
-  inside of a tmux session.
+- So we have a single tmux window with 2 panes, insdie of a tmux session.
 
 <!-- next slide -->
 
@@ -98,6 +95,7 @@ Note:
 Note:
 - I am opening another `tmux` window within the same `tmux` session.
 - And then I split it vertically into 2 panes to have 2 shells.
+- Next I'll do something more here
 
 <!-- next slide -->
 
@@ -114,6 +112,7 @@ Note:
   within Neovim. I haven't found a reason to use it yet as I already have
   a fluent `tmux` workflow. But if you're not used to `tmux` then that Terminal
   mode in Neovim should come in very handy.
+- This will become more clear when I get to the demos.
 - Okay, lets talk about the C++ project.
 
 <!-- next slide -->
@@ -343,9 +342,9 @@ Source directory
 `$ invoke config` <!-- .element: class="fragment" -->
 
 Note:
-- So all we need to make the Neovim lsp client connect to `clangd` C++ language
-  server, is to have that complation database present in the root of our
-  project.
+- So all we need to do to make the Neovim lsp client connect to `clangd` C++
+  language server, is to have that complation database present in the root of
+  our project.
 - And all I did here was run `invoke config`, and it did a CMake configure,
   then it created this symlink in the source directory, and that made Neovim
   connect to clangd.
@@ -396,7 +395,6 @@ https://xkcd.com/191/
 
 Note:
 - **Pause**
-- **Breathe**
 - One last thing, before I switch to demos.
 - One of the things you learn to do with Vim and Neovim is to come up with your
   keybindings for the most common workflows, and you do that by having
@@ -424,7 +422,7 @@ Note:
 - Neovim Setup
 
 Note:
-- Lets me take a look at the time to see if we can take a quick pause for questions.
+- Lets me take a look at the time.
 - I should have 30-35 mins left right now.
 
 ### Pause for questions

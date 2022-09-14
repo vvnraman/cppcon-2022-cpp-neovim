@@ -12,17 +12,17 @@ Note:
   approximation of which I use at work as well
 - I'm a regular C++ application developer, who just happens to be enthusiastic
   about his dev setup.
-- Before we start...
+- Sometimes...
 
 <!-- next slide -->
 
 
-<!-- .slide: data-background-image="slides/res/cppcon-bloomberg-dark-content-1280x720.png" data-visibility="hidden" -->
-![Talk Setup](slides/res/cppcon-talk-setup-1280x720.jpg)
+<!-- .slide: data-background-image="slides/res/current-talk-setup-edited-1280x720.jpg" -->
 
 Note:
-.. **dev setup**
-- Sometimes overly enthusiastic as well !
+- ... overly enthusiastic as well !
+- This is the current setup for this talk.
+- **Pause**
 - Before we start...
 
 <!-- next slide -->
@@ -74,8 +74,6 @@ Note:
   Neovim for similar reasons
   - Both the tangible ones like speed, minimalism and efficiency and this
     intangible thing where it gets out of way.
-
-## Pause
 
 With that, lets get started with the actual talk.
 

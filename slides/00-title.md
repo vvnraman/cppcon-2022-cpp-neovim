@@ -2,10 +2,6 @@
 
 Note:
 
-# Breathe
-
-# High Energy
-
 - Welcome everyone !
 - This is a talk on C++ coding with Neovim on the command line.
 - I'm Prateek.

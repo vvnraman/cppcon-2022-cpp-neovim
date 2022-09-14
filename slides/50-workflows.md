@@ -34,7 +34,6 @@ Note:
 - Type `cpp`
 - Delete `cpp`, type `main`
 - Open `app_main.cpp`
-- **Pause**
   - Ask if everything is legible
   - Is the font size good
 - And this is the file you were seeing in the screenshot earlier.

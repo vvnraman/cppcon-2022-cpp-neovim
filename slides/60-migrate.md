@@ -207,8 +207,6 @@ Note:
 - So if you're on of those people who like to configure your editor using
   a lisp, then Neovim is for you !
 
-<!-- next slide -->
-
-# Pause before end
+- **Pause** before end
 
 <!-- next slide -->

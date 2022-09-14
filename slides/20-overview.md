@@ -34,19 +34,21 @@ Note:
   Protocol
 - A language server is a language specific server which understands your
   project at an abstract syntax tree and semantic level.
+
   - Its analogous to a build system, and we'll see later how the C++ build
     system helps us setup the language for us, which is the de facto C++
     language server.
-- So a development tool, like Neovim, can talk to the langauge server over LSP
-  and ask for something like
+
+- So a development tool, like Neovim, can talk to the langauge server over this
+  protocol and ask for things like
 
   - "where is this function defined" or
   - "where is this type declared"
-  - "I've typed these letters so far, do you have any symbols in the current context which match what I have typed"
+  - "Do you have any completion items for me at the current cursor location"
 
-  and use that information to provide intellisence.
-- Neovim has a built in LSP client which enables it to have intellisence like
-  you would expect from any IDE.
+  and then use that information to provide intellisense.
+- Neovim can do this because it has a built in LSP client which enables it to
+  have intellisence like you would expect from any IDE.
 - You don't have to fully understand this to make sense of this talk. I'll just
   be using the terms LSP and language server throughout the talk.
 
