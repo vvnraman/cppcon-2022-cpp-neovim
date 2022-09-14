@@ -273,12 +273,12 @@ gulp.task('package', gulp.series(() =>
 
     gulp.src(
         [
-            './index.html',
-            './dist/**',
-            './lib/**',
-            './images/**',
-            './plugin/**',
-            './**.md'
+            'index.html',
+            '*dist/**/*',
+            '*lib/**/*',
+            '*images/**/*',
+            '*plugin/**/*',
+            '*slides/**/*'
         ],
         { base: './' }
     )
